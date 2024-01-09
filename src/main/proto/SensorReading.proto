@@ -1,0 +1,20 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "examples";
+
+service SensorService {
+  rpc requestSensorData(SensorRequest) returns (SensorData);
+}
+
+message SensorRequest {
+  int64 sensorId = 1;
+}
+
+message SensorData {
+  string temperature = 1;
+  string humidity = 2;
+  string pressure = 3;
+  string co = 4;
+  string no2 = 5;
+  string so2 = 6;
+}
